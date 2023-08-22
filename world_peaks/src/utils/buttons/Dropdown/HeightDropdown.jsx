@@ -5,6 +5,7 @@ import { HeightFilterButton } from '../HeightFilterButton/HeightFilterButton';
 
 export const HeightDropdown = ({
     onHeightFilter,
+    // onOpen,
 }) => {
     const [open, setOpen] = useState(false);
 
@@ -12,6 +13,7 @@ export const HeightDropdown = ({
 
     const handleOpen = () => {
         setOpen(!open);
+        // onOpen(["Height", !open])
     };
 
     return (

@@ -5,7 +5,8 @@
     border: none;
     font-size: 16px;
     font-weight: bold;
-    font-family: cursive;
+    font-family: system-ui;
+    /* font-family: cursive; */
     padding-left: 10px;
     border-radius: 10px;
     margin-bottom: 5px;

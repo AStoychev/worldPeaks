@@ -32,5 +32,12 @@ export const onFilterByHight = (peaks, filterByPeakHight) => {
         filtredItems.push(givePeakBelow3000(all_data))
     }
 
+    // let maxPeak = []
+    // for(let i in filtredItems[0]) {
+    //     maxPeak.push(filtredItems[0][i]["meters"])
+    // }
+    // maxPeak = Math.max(...maxPeak);
+
+
     return filtredItems[0]
 }

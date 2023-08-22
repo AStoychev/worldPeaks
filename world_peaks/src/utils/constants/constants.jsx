@@ -2,7 +2,7 @@ export const allCountries =
     [
         'Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Antarctica', 'Antigua and Barbuda', 'Argentina', 'Australia', 'Austria', 'Azerbaijan',
         'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Brazil', 'Bulgaria',
-        'Cameroon', 'Canada', 'Chad', 'Chile', 'China', 'Colombia', 'Congo, Democratic Republic of the', 'Costa Rica',
+        'Cameroon', 'Canada', 'Chad', 'Chile', 'China', 'Colombia', 'Congo, Democratic Republic of the Congo', 'Costa Rica',
         'Dominican Republic',
         'Ecuador', 'Egypt', 'El Salvador', 'Ethiopia',
         'France',

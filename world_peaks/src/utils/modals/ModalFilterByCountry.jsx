@@ -73,7 +73,7 @@ export const ModalFilterByCountry = ({
                         Close
                     </Button>
                     <Button variant="primary" onClick={onCountryFilter}>
-                        Save Changes
+                        Show Peaks
                     </Button>
                 </Modal.Footer>
             </Modal>

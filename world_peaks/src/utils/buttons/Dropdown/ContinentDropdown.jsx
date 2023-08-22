@@ -5,6 +5,7 @@ import { ContinentsFilterButton } from "../ContinentsFilterButton/ContinentsFilt
 
 export const ContinentDropdown = ({
     onContinentFilter,
+    // onOpen,
 }) => {
     const [open, setOpen] = useState(false);
 
@@ -12,6 +13,7 @@ export const ContinentDropdown = ({
 
     const handleOpen = () => {
         setOpen(!open);
+        // onOpen(["Continent", !open])
     };
 
     return (

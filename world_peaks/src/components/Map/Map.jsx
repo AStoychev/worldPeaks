@@ -1,18 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { onlyUnique } from '../../functions/onlyUniques';
 import { onFilterByHight } from '../../functions/onFilterByHight';
 import { onFilterByContinents } from '../../functions/onFilterByContinents';
 import { onFilterByCountries } from '../../functions/onFilterByCountries';
 import { ModalFilterByCountry } from '../../utils/modals/ModalFilterByCountry';
+import { getCoordinates } from '../../functions/getCoordinates';
 
+import { Search } from '../Seacrch/Search';
 import { HeightDropdown } from '../../utils/buttons/Dropdown/HeightDropdown';
 import { ContinentDropdown } from '../../utils/buttons/Dropdown/ContinentDropdown';
 
 import { SelectButton } from '../../utils/buttons/SelectButton/SelectButton';
 
+import { useMap } from "react-leaflet";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { customIcon } from '../../utils/customIcons';
+
+import all_data from "../../data/all_peaks_over_2000_meters_data.json"
 
 import "leaflet/dist/leaflet.css";
 import "./style.css"
@@ -21,6 +26,16 @@ export const Map = () => {
 
     const [peaks, setPeaks] = useState([]);
     const [checked, setChecked] = useState([]);
+
+    // const [heightBtn, setHeightBtn] = useState();
+    // const [continentBtn, setContinentBtn] = useState();
+    // const onOpen = (data) => {
+    //     if (data[0] === "Height") {
+    //         setHeightBtn(data[1])
+    //     } else if (data[0] === "Continent") {
+    //         setContinentBtn(data[1])
+    //     }
+    // }
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -51,10 +66,36 @@ export const Map = () => {
     const onCountryFilter = () => {
         setPeaks(onFilterByCountries(checked).filter(onlyUnique))
         setShow(false)
-    }
+    };
 
     const onClearAllFilter = () => {
         setPeaks([])
+    };
+
+    // Search
+    const getDataFromSearch = (newData) => {
+        let searchData = []
+        for (let i in all_data) {
+            if (all_data[i].name === newData)
+                searchData.push(all_data[i])
+
+        }
+        if (searchData.length) {
+            setPeaks(searchData);
+        }
+    }
+
+
+    // Go to peak
+    const GoToPeak = () => {
+        const map = useMap();
+        useEffect(() => {
+            map.locate().on("locationfound", function (e) {
+                if (peaks.length === 1) {
+                    map.flyTo(getCoordinates(peaks), map.zoom = 18);
+                }
+            })
+        })
     }
 
     return (
@@ -66,7 +107,7 @@ export const Map = () => {
                 />
 
                 <div className="search-container">
-                    <SelectButton buttonName={"Clear All"} handleOpen={onClearAllFilter}/>
+                    <SelectButton buttonName={"Clear All"} handleOpen={onClearAllFilter} />
                     <HeightDropdown onHeightFilter={onHeightFilter} />
                     <ContinentDropdown onContinentFilter={onContinentFilter} />
                     <ModalFilterByCountry
@@ -76,6 +117,8 @@ export const Map = () => {
                         onCountryChange={onCountryChange}
                         onCountryFilter={onCountryFilter}
                     />
+                    <Search getDataFromSearch={getDataFromSearch} />
+                    <GoToPeak />
                 </div>
 
                 {peaks.map(peak => (
