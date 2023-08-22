@@ -1,0 +1,18 @@
+.buttonHeightFilter {
+    width: 160px;
+    height: 30px;
+    /* border: solid; */
+    border: none;
+    padding-left: 10px;
+    border-radius: 25px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    background-image: linear-gradient(to right, #bef6ff, #3877a7) !important;
+    /* background-image: linear-gradient(to right, #e052a0, #f15c41) !important;; */
+    /* background-color: rgb(152, 207, 207); */
+}
+
+.buttonHeightFilter:hover {
+    background-image: linear-gradient(to right, #6feacd, #6cff93) !important;
+}
