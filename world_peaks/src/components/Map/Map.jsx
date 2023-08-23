@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import { onlyUnique } from '../../functions/onlyUniques';
 import { onFilterByHight } from '../../functions/onFilterByHight';

@@ -3,7 +3,6 @@ import { useState, useEffect } from "react"
 import all_data from "../../data/all_peaks_over_2000_meters_data.json"
 
 import Fade from 'react-bootstrap/Fade';
-
 import styles from './Search.module.css'
 
 
