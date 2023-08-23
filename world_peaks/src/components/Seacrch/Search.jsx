@@ -2,7 +2,6 @@ import { useState, useEffect } from "react"
 
 import all_data from "../../data/all_peaks_over_2000_meters_data.json"
 
-import Button from 'react-bootstrap/Button';
 import Fade from 'react-bootstrap/Fade';
 
 import styles from './Search.module.css'
@@ -17,10 +16,10 @@ export const Search = ({
     const [found, setFound] = useState(true);
 
     // Get all products
-    const [allProducts, setAllProducts] = useState([]);
+    const [allPeaks, setAllPeaks] = useState([]);
     useEffect(() => {
         const fetchData = () => {
-            setAllProducts(all_data);
+            setAllPeaks(all_data);
         }
         fetchData()
     }, []);
@@ -40,21 +39,21 @@ export const Search = ({
 
     // Send data to Section
     const ClickHandler = () => {
-        // Check for existing product
-        let allProducts = []
+        // Check for existing peak
+        let allPeaks = []
         for (let i in all_data) {
-            allProducts.push(all_data[i].title)
+            allPeaks.push(all_data[i].name)
         }
 
-        if(!allProducts.includes(value)) {
+        if(!allPeaks.includes(value)) {
             setFound(false)
         }
 
         setTimeout(() => {
             setFound(true)
         }, 2000)
-        // Check for existing product
-
+        
+        // Check for existing peak
         getDataFromSearch(value)
     }
     // Send data to Section
@@ -79,7 +78,7 @@ export const Search = ({
                                 <button className={styles.searchBtn} variant="info" onClick={ClickHandler}>Search</button>
                             </div>
                             <div className={styles.dropdown}>
-                                {allProducts
+                                {allPeaks
                                     .filter(item => {
                                         const searchTerm = value.toLowerCase();
                                         const place = item.name.toLowerCase();

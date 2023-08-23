@@ -5,22 +5,18 @@ import { HeightFilterButton } from '../HeightFilterButton/HeightFilterButton';
 
 export const HeightDropdown = ({
     onHeightFilter,
-    // onOpen,
+    showOpen,
+    dropDownHeight,
 }) => {
-    const [open, setOpen] = useState(false);
-
-    const [choose, setChoose] = useState(false);
-
     const handleOpen = () => {
-        setOpen(!open);
-        // onOpen(["Height", !open])
+        showOpen("Height", !dropDownHeight)
     };
 
     return (
         <div className="dropdown">
-            <SelectButton buttonName={"Select Height"} handleOpen={handleOpen}/>
+            <SelectButton buttonName={"Select Height"} handleOpen={handleOpen} />
             {/* <button onClick={handleOpen}>Select Height</button> */}
-            {open ? (
+            {dropDownHeight ? (
                 <div>
                     < HeightFilterButton buttonName={"Over 8000m"} onHeightFilter={onHeightFilter} />
                     < HeightFilterButton buttonName={"Between 7000-8000m"} onHeightFilter={onHeightFilter} />

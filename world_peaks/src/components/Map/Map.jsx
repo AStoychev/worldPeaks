@@ -55,6 +55,7 @@ export const Map = () => {
     };
 
     const onClearAllFilter = () => {
+        console.log(1111111)
         setPeaks([])
     };
 
@@ -115,7 +116,7 @@ export const Map = () => {
                             <br />
                             Feet: {peak.feet}
                             <br />
-                            Region: {peak.regions}
+                            {peak.regions ? `Country: ${peak.regions}` : ""}
                             <br />
                             {peak.countries ? `Country: ${peak.countries}` : ""}
                         </Popup>

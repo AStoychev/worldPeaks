@@ -5,22 +5,18 @@ import { ContinentsFilterButton } from "../ContinentsFilterButton/ContinentsFilt
 
 export const ContinentDropdown = ({
     onContinentFilter,
-    // onOpen,
+    showOpen,
+    dropDownContinents
 }) => {
-    const [open, setOpen] = useState(false);
-
-    const [choose, setChoose] = useState(false);
-
     const handleOpen = () => {
-        setOpen(!open);
-        // onOpen(["Continent", !open])
+        showOpen("Continent", !dropDownContinents)
     };
 
     return (
         <div className="dropdown">
-            <SelectButton buttonName={"Continent"} handleOpen={handleOpen}/>
+            <SelectButton buttonName={"Continent"} handleOpen={handleOpen} />
             {/* <button onClick={handleOpen}>Select Height</button> */}
-            {open ? (
+            {dropDownContinents ? (
                 <div>
                     < ContinentsFilterButton buttonName={"Africa"} onContinentFilter={onContinentFilter}/>
                     < ContinentsFilterButton buttonName={"Antarctica"} onContinentFilter={onContinentFilter}/>
@@ -34,4 +30,4 @@ export const ContinentDropdown = ({
             {/* {open ? <div>Is Open</div> : <div>Is Closed</div>} */}
         </div>
     );
-} 
+}

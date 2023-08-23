@@ -71,3 +71,18 @@
 .dropdownRow:hover {
     background-color: rgb(44, 100, 178);
 }
+
+.notFoundField {
+    background-color: rgb(162, 249, 216);
+    width: 184px;
+    height: 30px;
+    margin-top: -5px;
+    margin-left: 5px;
+    float: left;
+    border-radius: 10px;
+}
+
+.spanNotFound {
+    font-size: 18px;
+    margin-left: 10px;
+}
