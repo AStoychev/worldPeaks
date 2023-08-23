@@ -4,14 +4,10 @@ import { onlyUnique } from '../../functions/onlyUniques';
 import { onFilterByHight } from '../../functions/onFilterByHight';
 import { onFilterByContinents } from '../../functions/onFilterByContinents';
 import { onFilterByCountries } from '../../functions/onFilterByCountries';
-import { ModalFilterByCountry } from '../../utils/modals/ModalFilterByCountry';
 import { getCoordinates } from '../../functions/getCoordinates';
 
+import { MapDropDown } from '../../utils/buttons/Dropdown/MapDropDown';
 import { Search } from '../Seacrch/Search';
-import { HeightDropdown } from '../../utils/buttons/Dropdown/HeightDropdown';
-import { ContinentDropdown } from '../../utils/buttons/Dropdown/ContinentDropdown';
-
-import { SelectButton } from '../../utils/buttons/SelectButton/SelectButton';
 
 import { useMap } from "react-leaflet";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
@@ -26,16 +22,6 @@ export const Map = () => {
 
     const [peaks, setPeaks] = useState([]);
     const [checked, setChecked] = useState([]);
-
-    // const [heightBtn, setHeightBtn] = useState();
-    // const [continentBtn, setContinentBtn] = useState();
-    // const onOpen = (data) => {
-    //     if (data[0] === "Height") {
-    //         setHeightBtn(data[1])
-    //     } else if (data[0] === "Continent") {
-    //         setContinentBtn(data[1])
-    //     }
-    // }
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -89,13 +75,12 @@ export const Map = () => {
     // Go to peak
     const GoToPeak = () => {
         const map = useMap();
-        useEffect(() => {
-            map.locate().on("locationfound", function (e) {
-                if (peaks.length === 1) {
-                    map.flyTo(getCoordinates(peaks), map.zoom = 18);
-                }
-            })
-        })
+        if (peaks.length === 1) {
+            map.flyTo(getCoordinates(peaks), map.zoom = 18);
+        } 
+        else if (peaks.length > 1) {
+            map.flyTo(getCoordinates(peaks), map.zoom = 5);
+        }
     }
 
     return (
@@ -107,10 +92,10 @@ export const Map = () => {
                 />
 
                 <div className="search-container">
-                    <SelectButton buttonName={"Clear All"} handleOpen={onClearAllFilter} />
-                    <HeightDropdown onHeightFilter={onHeightFilter} />
-                    <ContinentDropdown onContinentFilter={onContinentFilter} />
-                    <ModalFilterByCountry
+                    <MapDropDown
+                        handleOpen={onClearAllFilter}
+                        onHeightFilter={onHeightFilter}
+                        onContinentFilter={onContinentFilter}
                         show={show}
                         handleShow={handleShow}
                         handleClose={handleClose}
