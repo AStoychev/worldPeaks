@@ -16,7 +16,8 @@ export const MapDropDown = ({
     handleShow,
     handleClose,
     onCountryChange,
-    onCountryFilter
+    onCountryFilter,
+    peaks
 }) => {
     const [open, setOpen] = useState(false);
     const [dropDownHeight, setDropDownHeight] = useState(false)
@@ -50,7 +51,7 @@ export const MapDropDown = ({
             }
             {open ? (
                 <div>
-                    <ClearButton buttonName={"Clear All"} handleOpen={onClearAllFilter} />
+                    {peaks.length ? <ClearButton onClearAllFilter={onClearAllFilter} /> : ""}
                     <ModalFilterByCountry
                         show={show}
                         handleShow={handleShow}

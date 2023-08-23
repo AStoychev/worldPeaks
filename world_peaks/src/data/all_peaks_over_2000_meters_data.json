@@ -5630,7 +5630,7 @@
             "meters":4884,
             "latitude":-4.08333,
             "longitude":137.183,
-            "name":"Puncak Jaya",
+            "name":"Puncak Jaya, Mt. Carstensz",
             "regions":[
                   "Maoke Range"
             ],
@@ -7405,6 +7405,22 @@
             ],
             "continent":"Europe",
             "id":476
+      },
+	{
+            "feet":9596,
+            "meters":2925,
+	    "latitude":42.1792,
+            "longitude":23.5852,
+            "name":"Musala",
+            "regions":[
+                  "Balkan Peninsula",
+                  "Macedonia-Thrace"
+            ],
+            "countries":[
+                  "Bulgaria"
+            ],
+            "continent":"Europe",
+            "id":14
       },
       {
             "feet":9564,
@@ -19538,7 +19554,7 @@
             "meters":6194,
             "latitude":63.0694,
             "longitude":-151.004,
-            "name":"Mount McKinley",
+            "name":"Denaly, Mount McKinley",
             "regions":[
                   "Alaska/Yukon Ranges",
                   "Alaska Range"

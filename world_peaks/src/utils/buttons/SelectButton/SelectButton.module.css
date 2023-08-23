@@ -22,3 +22,9 @@
     background-color: rgb(44, 100, 178);
     /* background-image: linear-gradient(to right, #6feacd, #6cff93) !important; */
 }
+
+.clearFilter {
+    color: rgb(240, 42, 42);
+    margin-left: 5px;
+    font-size: 18px;
+}

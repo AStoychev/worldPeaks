@@ -1,0 +1,24 @@
+.aboutSection {
+    padding-top: 181px;
+    padding-bottom: 181px;
+    color: white;
+    font-size: 18px;
+    background-color: rgb(13, 11, 15);
+}
+
+.titleSpan {
+    color:rgb(108, 197, 210);
+}
+
+.contactLinkDiv {
+    padding: 10px;
+}
+
+.contactLink {
+    margin-left: 10px;
+}
+
+.contactLink:hover {
+    display: inline-block;
+    background-color: rgb(90, 66, 184);
+}

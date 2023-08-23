@@ -13,7 +13,9 @@ import { useMap } from "react-leaflet";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { customIcon } from '../../utils/customIcons';
 
+import { mostHighPeaksOnEveryContinent } from '../../utils/constants/mostHighPeaksOnEveryContinent';
 import all_data from "../../data/all_peaks_over_2000_meters_data.json"
+
 
 import "leaflet/dist/leaflet.css";
 import "./style.css"
@@ -55,7 +57,6 @@ export const Map = () => {
     };
 
     const onClearAllFilter = () => {
-        console.log(1111111)
         setPeaks([])
     };
 
@@ -81,8 +82,12 @@ export const Map = () => {
         } 
         else if (peaks.length > 1) {
             map.flyTo(getCoordinates(peaks), map.zoom = 5);
+        } else {
+            map.flyTo([51.505, -0.09], map.zoom = 3);
         }
     }
+
+    console.log(peaks)
 
     return (
         <div className="sectionStyle">
@@ -94,7 +99,7 @@ export const Map = () => {
 
                 <div className="search-container">
                     <MapDropDown
-                        handleOpen={onClearAllFilter}
+                        onClearAllFilter={onClearAllFilter}
                         onHeightFilter={onHeightFilter}
                         onContinentFilter={onContinentFilter}
                         show={show}
@@ -102,6 +107,7 @@ export const Map = () => {
                         handleClose={handleClose}
                         onCountryChange={onCountryChange}
                         onCountryFilter={onCountryFilter}
+                        peaks={peaks}
                     />
                     <Search getDataFromSearch={getDataFromSearch} />
                     <GoToPeak />
