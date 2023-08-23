@@ -1,12 +1,94 @@
+.flexContainer {
+    display: flex;
+    width: 100%;
+    height: 72px;
+    background-color: rgb(11, 1, 38);;
+}
+
+.navigation{
+    flex: 1;
+    /* border: 2px solid blueviolet; */
+    /* margin: 10px; */
+}
+
+.navigation:first-child {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: left;
+    align-items: baseline;
+    color: white;
+}
+
+.navigationChild {
+    padding-top: 20px;
+}
+
+.navigation:nth-last-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    width: 100%;
+}
+
 .container {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    align-items: baseline;
+    padding-top: 6px;
+    margin-top: 0px;
+    color: white;
+}
+
+.logoLink {
+    text-decoration: none;
+}
+
+.container>h1 {
+    font-weight: bold;
+    /* padding-top: 8px; */
+}
+
+.container>h3 {
+    color: rgb(108, 197, 210);
+    font-weight: bold;
+    font-size: 33px;
+    /* padding-top: 8px; */
+}
+
+.logo {
+    padding-bottom: 20px;
+}
+
+.navigationLink {
+    padding-top: 20px;
+    color: white;
+    padding-left: 10px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.navigationLink:hover {
+    color: rgb(184, 205, 115);
+}
+
+.navigationLinkLogo {
+    text-decoration: none;
+}
+
+/* .navigation:first-child{
+    margin-right: 20px;
+} */
+
+/* .container {
     box-sizing: border-box;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: baseline;
     padding-top: 0px;
-    /* padding: 1em;
-    margin-bottom: 2em; */
     background-color: rgb(11, 1, 38);
     color: #fff;
 }
@@ -16,8 +98,6 @@
     position: absolute;
     width: 20%;
     top: 15px;
-    /* border: solid;
-    border-color: red; */
 }
 
 .navigationLink {
@@ -42,4 +122,4 @@
 
 .logo {
     padding-bottom: 20px;
-}
+} */
