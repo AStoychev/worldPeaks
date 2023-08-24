@@ -1,7 +1,7 @@
 # worldPeaks
 React application that shows on a map the mountain peaks of the world up to 2000 meter high.
 
-WorldPeaks is static site.
+**WorldPeaks is static site.**
 
 I created WorldPeaks with the main idea of applying my React skills. I use information in the form of JSON. As it is possible that the information does not correspond with the real data for the peaks. If you find the wrong information on the site to the actual peak, please feel free to contact me.
 
