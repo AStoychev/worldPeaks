@@ -73,7 +73,6 @@ export const Map = () => {
         }
     }
 
-
     // Go to peak
     const GoToPeak = () => {
         const map = useMap();
