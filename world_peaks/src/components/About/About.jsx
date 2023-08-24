@@ -34,7 +34,7 @@ export const About = () => {
                         </div>
                         <div className="col-md-6 ">
                             <div className="img-box">
-                                <img src="images/about.png" alt="" />
+                                <img className={styles.peakImg} src="images/about.png" alt="peak" />
                             </div>
                         </div>
                     </div>

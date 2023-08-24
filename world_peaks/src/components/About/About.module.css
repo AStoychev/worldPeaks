@@ -7,7 +7,7 @@
 }
 
 .titleSpan {
-    color:rgb(108, 197, 210);
+    color: rgb(108, 197, 210);
 }
 
 .contactLinkDiv {
@@ -21,4 +21,12 @@
 .contactLink:hover {
     display: inline-block;
     background-color: rgb(90, 66, 184);
+}
+
+/* Resize automaticaly image after resize display */
+.peakImg {
+    max-width: 100%;
+    height: auto;
+    width: auto\9;
+    /* ie8 */
 }
