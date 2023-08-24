@@ -71,7 +71,6 @@ export const MapDropDown = ({
                     />
                 </div>
             ) : null}
-            {/* {open ? <div>Is Open</div> : <div>Is Closed</div>} */}
         </div>
     );
 }

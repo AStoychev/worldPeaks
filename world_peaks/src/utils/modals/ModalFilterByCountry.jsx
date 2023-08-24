@@ -1,8 +1,4 @@
-import
-// countryA, countryB, countryC, countryDtoF, countryGtoH, countryItoJ, countryKtoL, countryM, countryNtoO, countryP, countryR,
-// countryS, countryT, countryUtoV
-{ allCountries }
-    from '../constants/constants';
+import{ allCountries } from '../constants/constants';
 
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -36,37 +32,6 @@ export const ModalFilterByCountry = ({
                             </label>
                         </div>
                     ))}
-                    {/* <div>
-                        <h5>A</h5>
-                        {countryA.map((x) => (
-                            <div key={x}>{x}</div>
-                        )
-                        )}
-                    </div>
-
-                    <div>
-                        <h5>B</h5>
-                        {countryB.map((x) => (
-                            <div key={x}>{x}</div>
-                        )
-                        )}
-                    </div>
-
-                    <div>
-                        <h5>C</h5>
-                        {countryC.map((x) => (
-                            <div key={x}>{x}</div>
-                        )
-                        )}
-                    </div>
-
-                    <div>
-                        <h5>D-F</h5>
-                        {countryDtoF.map((x) => (
-                            <div key={x}>{x}</div>
-                        )
-                        )}
-                    </div> */}
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>

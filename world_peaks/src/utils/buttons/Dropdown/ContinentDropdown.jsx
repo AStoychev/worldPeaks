@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import { SelectButton } from "../SelectButton/SelectButton";
 import { ContinentsFilterButton } from "../ContinentsFilterButton/ContinentsFilterButton";
 
@@ -15,7 +13,6 @@ export const ContinentDropdown = ({
     return (
         <div className="dropdown">
             <SelectButton buttonName={"Continent"} handleOpen={handleOpen} />
-            {/* <button onClick={handleOpen}>Select Height</button> */}
             {dropDownContinents ? (
                 <div>
                     < ContinentsFilterButton buttonName={"Africa"} onContinentFilter={onContinentFilter}/>
@@ -27,7 +24,6 @@ export const ContinentDropdown = ({
                     < ContinentsFilterButton buttonName={"South America"} onContinentFilter={onContinentFilter}/>
                 </div>
             ) : null}
-            {/* {open ? <div>Is Open</div> : <div>Is Closed</div>} */}
         </div>
     );
 }

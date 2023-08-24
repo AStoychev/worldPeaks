@@ -15,7 +15,6 @@ export const HeightDropdown = ({
     return (
         <div className="dropdown">
             <SelectButton buttonName={"Select Height"} handleOpen={handleOpen} />
-            {/* <button onClick={handleOpen}>Select Height</button> */}
             {dropDownHeight ? (
                 <div>
                     < HeightFilterButton buttonName={"Over 8000m"} onHeightFilter={onHeightFilter} />
@@ -27,7 +26,6 @@ export const HeightDropdown = ({
                     < HeightFilterButton buttonName={"Below 3000m"} onHeightFilter={onHeightFilter} />
                 </div>
             ) : null}
-            {/* {open ? <div>Is Open</div> : <div>Is Closed</div>} */}
         </div>
     );
 } 
