@@ -79,7 +79,7 @@ export const Map = () => {
         const map = useMap();
         if (peaks.length === 1) {
             map.flyTo(getCoordinates(peaks), map.zoom = 18);
-        } 
+        }
         else if (peaks.length > 1) {
             map.flyTo(getCoordinates(peaks), map.zoom = 5);
         } else {
@@ -89,6 +89,7 @@ export const Map = () => {
 
     return (
         <div className="sectionStyle">
+
             <MapContainer center={[51.505, -0.09]} zoom={3} className="mapContainer" scrollWheelZoom={true}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

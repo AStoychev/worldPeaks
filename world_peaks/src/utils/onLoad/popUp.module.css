@@ -1,0 +1,58 @@
+.popup {
+    background-color: #cca3a3;
+    width: 450px;
+    padding: 10px 20px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    z-index: 1000;
+    font-family: "Poppins",sans-serif;
+}
+
+.container {
+    padding-bottom: 5px;
+}
+
+.closeButton {
+    display: block;
+    margin:  0 0 1px auto;
+    background-color: transparent;
+    font-size: 20px;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.popup h2 {
+    text-align: center;
+}
+
+.popup p {
+    font-size: 14px;
+    text-align: justify;
+    margin: 20px 1px;
+}
+
+.letsGoButton {
+    display: block;
+    width: 150px;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    background-color: #0f72e5;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 0;
+    border: none;
+}
+
+.letsGoButton:hover {
+    background-color: #18579f;
+}
+
+.aboutLink {
+    text-decoration: none;
+}

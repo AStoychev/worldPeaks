@@ -1,11 +1,25 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
+import { OnLoad } from '../../utils/onLoad/onLoad';
 
 import styles from "./Header.module.css"
 
 export const Header = () => {
+
+    // Show first modal
+    const onLoadModal = (data) => {
+        if (data === "Close") {
+            setShowModal()
+        }
+    }
+    const [showModal, setShowModal] = useState(<OnLoad onLoadModal={onLoadModal} />)
+    // Show first modal
+
     return (
         <>
-            <div className={styles.flexContainer}>
+            <div className={styles.flexContainer} onLoad={onLoadModal}>
+            <div>{showModal}</div>
                 <div className={styles.navigation}>
                     <div className={styles.navigationChild}>
                         <Link className={styles.navigationLink} to="/">Home</Link>
