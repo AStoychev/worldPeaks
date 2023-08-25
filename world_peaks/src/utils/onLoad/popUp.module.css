@@ -11,13 +11,19 @@
     font-family: "Poppins", sans-serif;
 }
 
-@media(min-width:768px) {
+@media only screen and (max-width: 400px) {
+    .popup {
+        width: 100%;
+    }
+}
+
+/* @media(min-width:768px) {
     .popup {
         float: left;
         width: 30%;
         margin-right: 5px;
     }
-}
+} */
 
 .container {
     padding-bottom: 5px;
