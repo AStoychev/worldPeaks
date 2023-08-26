@@ -30,7 +30,7 @@ export const Header = () => {
                     <Link className={styles.navigationLinkLogo} to="/">
                         <div className={styles.container}>
                             <h1>World</h1>
-                            <h3>Peaks</h3>
+                            <h2>Peaks</h2>
                             <div>
                                 <img className={styles.logo} src="images/logo.png" alt="logo" />
                             </div>
