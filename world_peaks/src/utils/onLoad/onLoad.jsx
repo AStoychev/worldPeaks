@@ -14,6 +14,9 @@ export const OnLoad = ({
                 <div className={styles.container}>
                     <button className={styles.closeButton} onClick={handleClose}>&times;</button>
                     <h2>Hello</h2>
+                    <p className={styles.paragraphCookie}>
+                        This website collects cookies to deliver better user experience!
+                    </p>
                     <p>
                         WorldPeaks is application where you can find all the peaks in the world
                         up to 2000 meters high. The main purpose of the app is to showcase my
