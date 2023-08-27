@@ -30,3 +30,54 @@
     /* left: -0.5%; */
     z-index: 1000;
 }
+
+.deleteDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    /* font-size: 6px; */
+}
+
+.deleteFavorite {
+    /* width: 80px;
+    height: 30px; */
+    text-align: center;
+    align-items: center;
+
+    background-color: rgb(189, 4, 4);
+    color: rgb(255, 255, 255);
+    border: none;
+}
+
+.deleteFavorite:hover {
+    background-color: rgb(150, 13, 13);
+}
+
+.deleteFavorite>span {
+    font-size: 18px;
+}
+
+
+.addFavorite {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+[id="heart"] {
+    position: absolute;
+    left: -100vw;
+}
+
+[for="heart"] {
+    color: #aab8c2;
+    cursor: pointer;
+    font-size: 3em;
+    align-self: center;
+    transition: color 0.2s ease-in-out;
+}
+
+[for="heart"]:hover {
+    color: rgb(240, 32, 32);
+}

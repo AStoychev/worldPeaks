@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { onlyUnique } from '../../functions/onlyUniques';
 import { onFilterByHight } from '../../functions/onFilterByHight';
@@ -16,7 +16,7 @@ import { customIcon } from '../../utils/customIcons';
 import { mostHighPeaksOnEveryContinent } from '../../utils/constants/mostHighPeaksOnEveryContinent';
 import all_data from "../../data/all_peaks_over_2000_meters_data.json"
 
-
+import { AiFillHeart } from 'react-icons/ai'
 import "leaflet/dist/leaflet.css";
 import "./style.css"
 
@@ -86,6 +86,34 @@ export const Map = () => {
         }
     }
 
+    // Save favorite place in local storage
+    const [exist, setExist] = useState(Object.values(localStorage));
+
+    const saveInFavorite = (e) => {
+        localStorage.setItem(
+            `id${e.target.value}`, e.target.value
+            // `id${e.target.value}`, JSON.stringify(e.target.value)
+        );
+        let keys = Object.values(localStorage)
+        setExist(keys)
+    }
+
+    const checkIsFavorite = (id) => {
+        for (let i in exist) {
+            if (Number(exist[i]) === id) {
+                return true
+            }
+        }
+    }
+
+    const deleteFavorite = (e) => {
+        localStorage.removeItem(`id${e.target.value}`)
+        setExist(Object.values(localStorage))
+    }
+
+    // console.log(exist)
+    // Save favorite place in local storage
+
     return (
         <div className="sectionStyle">
 
@@ -123,6 +151,28 @@ export const Map = () => {
                             {peak.regions ? `Country: ${peak.regions}` : ""}
                             <br />
                             {peak.countries ? `Country: ${peak.countries}` : ""}
+                            <br />
+                            {checkIsFavorite(peak.id)
+                                ?
+                                <div className="deleteDiv">
+                                    <button className="deleteFavorite" value={peak.id} onClick={deleteFavorite}>Delete from <AiFillHeart /></button>
+                                    {/* <input type="checkbox" id="heart" name="peak" value={peak.id} onClick={deleteFavorite} />
+                                    <label htmlFor="heart" className="deleteFavorite">Delete<AiFillHeart /></label> */}
+                                </div>
+                                :
+                                <div className="checkboxWrapper">
+                                    <form id={peak}>
+                                        <div className="addFavorite">
+                                            <input type="checkbox" id="heart" name="peak" value={peak.id} onClick={saveInFavorite} />
+                                            <label htmlFor="heart">❤</label>
+                                        </div>
+                                    </form>
+                                </div>
+                            }
+                            {/* <div>
+                                <label>Save in Favorite</label>
+                                <input type='button' value={peak.id} onClick={saveInFavorite} />
+                            </div> */}
                         </Popup>
                     </Marker>
                 ))}

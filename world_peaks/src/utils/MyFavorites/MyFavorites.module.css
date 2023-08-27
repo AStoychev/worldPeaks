@@ -1,5 +1,5 @@
 .popup {
-    background-color: #cca3a3;
+    background-color: #3ad781;
     width: 450px;
     padding: 10px 20px;
     position: absolute;
@@ -45,7 +45,7 @@
 }
 
 .paragraphCookie {
-    color: rgb(2, 2, 2);
+    color: rgb(0, 0, 0);
     /* color: rgb(24, 96, 84); */
     font-size: 15px;
     font-weight: bold;

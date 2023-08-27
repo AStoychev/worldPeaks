@@ -76,6 +76,21 @@
     color: rgb(184, 205, 115);
 }
 
+.navigationLinkFavorite {
+    color: rgb(216, 47, 47);
+    padding-left: 10px;
+    font-size: 21px;
+
+    /* Remove button style */
+    background: none;
+    border: none;
+    
+}
+
+.navigationLinkFavorite:hover {
+    color: rgb(184, 205, 115);
+}
+
 @media screen and (max-width: 900px) {
     .flexContainer {
         height: 60px;
@@ -86,15 +101,23 @@
     .flexContainer {
         height: 50px;
     }
+
     .container {
         margin-top: -5px;
     }
+
     .navigationChild {
         padding-top: 12px;
     }
+
     .navigationLink {
         font-size: 13px;
     }
+
+    .navigationLinkFavorite {
+        font-size: 13px;
+    }
+
     .logo {
         width: 30px;
         height: 50px;
