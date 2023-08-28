@@ -76,12 +76,11 @@
     color: rgb(184, 205, 115);
 }
 
-.navigationLinkFavorite {
+/* .navigationLinkFavorite {
     color: rgb(216, 47, 47);
     padding-left: 10px;
     font-size: 21px;
 
-    /* Remove button style */
     background: none;
     border: none;
     
@@ -89,7 +88,7 @@
 
 .navigationLinkFavorite:hover {
     color: rgb(184, 205, 115);
-}
+} */
 
 @media screen and (max-width: 900px) {
     .flexContainer {
@@ -114,9 +113,9 @@
         font-size: 13px;
     }
 
-    .navigationLinkFavorite {
+    /* .navigationLinkFavorite {
         font-size: 13px;
-    }
+    } */
 
     .logo {
         width: 30px;

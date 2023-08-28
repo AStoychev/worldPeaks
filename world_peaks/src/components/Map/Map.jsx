@@ -8,9 +8,10 @@ import { getCoordinates } from '../../functions/getCoordinates';
 
 import { MapDropDown } from '../../utils/buttons/Dropdown/MapDropDown';
 import { Search } from '../Seacrch/Search';
+import { MyFavorite } from '../../utils/MyFavorites/MyFavorites';
 
-import { useMap } from "react-leaflet";
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+// import { useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import { customIcon } from '../../utils/customIcons';
 
 import { mostHighPeaksOnEveryContinent } from '../../utils/constants/mostHighPeaksOnEveryContinent';
@@ -111,11 +112,24 @@ export const Map = () => {
         setExist(Object.values(localStorage))
     }
 
-    // console.log(exist)
+    // Button My Favorite
+    const [modalOpen, setModalOpen] = useState(false);
+    const modalClose = () => {
+        setModalOpen(false);
+    };
+
+    const goTo = (data) => {
+        setPeaks(data)
+    };
+
+    const handleCloseFavorite = () => {
+        setModalOpen(<MyFavorite onClose={modalClose} goTo={goTo}/>);
+    };
     // Save favorite place in local storage
 
     return (
         <div className="sectionStyle">
+            {modalOpen}
 
             <MapContainer center={[51.505, -0.09]} zoom={3} className="mapContainer" scrollWheelZoom={true}>
                 <TileLayer
@@ -137,6 +151,10 @@ export const Map = () => {
                     />
                     <Search getDataFromSearch={getDataFromSearch} />
                     <GoToPeak />
+                </div>
+
+                <div className='myFavorites'>
+                    <button className="navigationLinkFavorite" onClick={handleCloseFavorite}><AiFillHeart /></button>
                 </div>
 
                 {peaks.map(peak => (

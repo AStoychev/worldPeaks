@@ -29,29 +29,14 @@ export const Header = () => {
             setPopup(<OnLoad onLoadModal={onLoadModal} />)
         }
     }
-    // Show first modal
-
-    // Modal Favorite
-    const [modalOpen, setModalOpen] = useState(false);
-    const modalClose = () => {
-        setModalOpen(false)
-    }
-    const handleClose = () => {
-        setModalOpen(<MyFavorite  onClose={modalClose}/>)
-    }
-
-
-    // Modal Favorite
     return (
         <>
             <div className={styles.flexContainer} onLoad={lookForCookies}>
                 {popup}
-                {modalOpen}
                 <div className={styles.navigation}>
                     <div className={styles.navigationChild}>
                         <Link className={styles.navigationLink} to="/">Home</Link>
                         <Link className={styles.navigationLink} to="/about">About</Link>
-                        <button className={styles.navigationLinkFavorite} onClick={handleClose}><AiFillHeart /></button>
                     </div>
                 </div>
                 <div className={styles.navigation}>

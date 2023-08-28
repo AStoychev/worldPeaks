@@ -2,43 +2,57 @@ import { useState } from "react"
 
 import { deleteFavorite } from "../../functions/deleteFavorite"
 
+import { useMap } from "react-leaflet";
+
 import all_data from "../../data/all_peaks_over_2000_meters_data.json"
 
 import styles from "./MyFavorites.module.css"
 
 export const MyFavorite = ({
-    onClose
+    onClose,
+    goTo,
 }) => {
 
     const handleClose = () => {
         onClose()
     }
-    let favoriteKeys = Object.values(localStorage);
-
 
     const appendPeak = () => {
-        let favoriteItems = []
+        let favoriteItems = [];
+        let favoriteKeys = Object.values(localStorage);
         for (let peak in all_data) {
             for (let i in favoriteKeys) {
                 if (Number(favoriteKeys[i]) === all_data[peak].id) {
                     favoriteItems.push(all_data[peak])
-                    // console.log(all_data[peak])
-                    // setItem("Good")
                 }
             }
         }
         return favoriteItems
     }
 
+    const appendFavoritePeak = (id) => {
+        let favoriteItems = [];
+        for (let peak in all_data) {
+            if (Number(id) === all_data[peak].id) {
+                favoriteItems.push(all_data[peak])
+            }
+
+        }
+        return favoriteItems
+    }
+
+    const goToFavorite = (e) => {
+        let goToFavoritePeak = appendFavoritePeak(e.target.value)
+        goTo(goToFavoritePeak)
+        onClose()
+    }
+
     const onDelete = (e) => {
-        console.log(e.target.value)
         deleteFavorite(e)
         setItem(appendPeak)
     }
 
     const [item, setItem] = useState(appendPeak)
-
-    console.log(item)
 
     return (
         <div>
@@ -51,32 +65,31 @@ export const MyFavorite = ({
                         from another browser or device, they will not be saved!
                     </div>
                     <div>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Continent</th>
-                                    <th>Meters</th>
-                                    <th>Go To</th>
-                                    <th>Delete</th>
-                                </tr>
-                                {item.map(x => (
-                                    <tr key={x.id}>
-                                        <td>{x.name}</td>
-                                        <td>{x.continent}</td>
-                                        <td>{x.meters}</td>
-                                        <td><button style={{ color: "green" }}>O</button></td>
-                                        <td><button style={{ color: "red" }} value={x.id} onClick={onDelete}>X</button></td>
+                        {item.length
+                            ?
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Continent</th>
+                                        <th>Meters</th>
+                                        <th>Go To</th>
+                                        <th>Delete</th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                                    {item.map(x => (
+                                        <tr key={x.id}>
+                                            <td>{x.name}</td>
+                                            <td>{x.continent}</td>
+                                            <td>{x.meters}</td>
+                                            <td><button style={{ color: "green" }} value={x.id} onClick={goToFavorite}>O</button></td>
+                                            <td><button style={{ color: "red" }} value={x.id} onClick={onDelete}>X</button></td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                            :
+                            <div>You don't have favorite peaks yet!</div>}
                     </div>
-                    {/* {item.map(x => (
-                        <div key={x.id}>
-                            <div>{x.name}</div>
-                        </div>
-                    ))} */}
                     <button className={styles.letsGoButton} onClick={handleClose}>Close</button>
                 </div>
             </div>

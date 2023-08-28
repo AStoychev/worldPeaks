@@ -31,6 +31,15 @@
     z-index: 1000;
 }
 
+.myFavorites {
+    position: absolute;
+    padding-top: 5px;
+    top: 15%;
+    left: 0.3%;
+    /* left: -0.5%; */
+    z-index: 1000;
+}
+
 .deleteDiv {
     display: flex;
     justify-content: center;
@@ -80,4 +89,19 @@
 
 [for="heart"]:hover {
     color: rgb(240, 32, 32);
+}
+
+
+.navigationLinkFavorite {
+    color: rgb(216, 47, 47);
+    font-size: 30px;
+
+    /* Remove button style */
+    background: none;
+    border: none;
+
+}
+
+.navigationLinkFavorite:hover {
+    color: rgb(180, 29, 29);
 }
