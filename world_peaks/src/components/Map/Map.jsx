@@ -88,29 +88,29 @@ export const Map = () => {
     }
 
     // Save favorite place in local storage
-    const [exist, setExist] = useState(Object.values(localStorage));
+    // const [exist, setExist] = useState(Object.values(localStorage));
 
-    const saveInFavorite = (e) => {
-        localStorage.setItem(
-            `id${e.target.value}`, e.target.value
-            // `id${e.target.value}`, JSON.stringify(e.target.value)
-        );
-        let keys = Object.values(localStorage)
-        setExist(keys)
-    }
+    // const saveInFavorite = (e) => {
+    //     localStorage.setItem(
+    //         `id${e.target.value}`, e.target.value
+    //         // `id${e.target.value}`, JSON.stringify(e.target.value)
+    //     );
+    //     let keys = Object.values(localStorage)
+    //     setExist(keys)
+    // }
 
-    const checkIsFavorite = (id) => {
-        for (let i in exist) {
-            if (Number(exist[i]) === id) {
-                return true
-            }
-        }
-    }
+    // const checkIsFavorite = (id) => {
+    //     for (let i in exist) {
+    //         if (Number(exist[i]) === id) {
+    //             return true
+    //         }
+    //     }
+    // }
 
-    const deleteFavorite = (e) => {
-        localStorage.removeItem(`id${e.target.value}`)
-        setExist(Object.values(localStorage))
-    }
+    // const deleteFavorite = (e) => {
+    //     localStorage.removeItem(`id${e.target.value}`)
+    //     setExist(Object.values(localStorage))
+    // }
 
     // Button My Favorite
     const [modalOpen, setModalOpen] = useState(false);
@@ -170,12 +170,10 @@ export const Map = () => {
                             <br />
                             {peak.countries ? `Country: ${peak.countries}` : ""}
                             <br />
-                            {checkIsFavorite(peak.id)
+                            {/* {checkIsFavorite(peak.id)
                                 ?
                                 <div className="deleteDiv">
                                     <button className="deleteFavorite" value={peak.id} onClick={deleteFavorite}>Delete from <AiFillHeart /></button>
-                                    {/* <input type="checkbox" id="heart" name="peak" value={peak.id} onClick={deleteFavorite} />
-                                    <label htmlFor="heart" className="deleteFavorite">Delete<AiFillHeart /></label> */}
                                 </div>
                                 :
                                 <div className="checkboxWrapper">
@@ -186,7 +184,7 @@ export const Map = () => {
                                         </div>
                                     </form>
                                 </div>
-                            }
+                            } */}
                             {/* <div>
                                 <label>Save in Favorite</label>
                                 <input type='button' value={peak.id} onClick={saveInFavorite} />
