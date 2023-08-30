@@ -73,7 +73,7 @@ export const Search = ({
                     <Fade in={open}>
                         <div className={styles.searchContainer}>
                             <div className={styles.searchInner}>
-                                <input className={styles.searchInput} type="search" value={value} onChange={onChange} />
+                                <input className={styles.searchInput} id="search" type="search" value={value} onChange={onChange} />
                                 <button className={styles.searchBtn} variant="info" onClick={ClickHandler}>Search</button>
                             </div>
                             <div className={styles.dropdown}>

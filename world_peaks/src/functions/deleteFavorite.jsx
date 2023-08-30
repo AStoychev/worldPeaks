@@ -1,3 +1,3 @@
-export const deleteFavorite = (e) => {
-    localStorage.removeItem(`id${e.target.value}`)
+export const deleteFavorite = (id) => {
+    localStorage.removeItem(`id${id}`)
 }

@@ -11,15 +11,17 @@ import styles from "./MyFavorites.module.css"
 export const MyFavorite = ({
     onClose,
     goTo,
+    deleteFavorite,
 }) => {
 
     const handleClose = () => {
         onClose()
     }
 
-    const appendPeak = () => {
+    const appendPeakInModal = () => {
         let favoriteItems = [];
         let favoriteKeys = Object.values(localStorage);
+        // console.log(favoriteKeys)
         for (let peak in all_data) {
             for (let i in favoriteKeys) {
                 if (Number(favoriteKeys[i]) === all_data[peak].id) {
@@ -30,7 +32,7 @@ export const MyFavorite = ({
         return favoriteItems
     }
 
-    const appendFavoritePeak = (id) => {
+    const goToChooseFavoritePeak = (id) => {
         let favoriteItems = [];
         for (let peak in all_data) {
             if (Number(id) === all_data[peak].id) {
@@ -42,17 +44,19 @@ export const MyFavorite = ({
     }
 
     const goToFavorite = (e) => {
-        let goToFavoritePeak = appendFavoritePeak(e.target.value)
+        // let goToFavoritePeak = appendPeakInModal();
+        let goToFavoritePeak = goToChooseFavoritePeak(e.target.value)
         goTo(goToFavoritePeak)
         onClose()
     }
 
     const onDelete = (e) => {
         deleteFavorite(e)
-        setItem(appendPeak)
+        // deleteFavorite(e.target.value)
+        setItem(appendPeakInModal)
     }
 
-    const [item, setItem] = useState(appendPeak)
+    const [item, setItem] = useState(appendPeakInModal)
 
     return (
         <div>
