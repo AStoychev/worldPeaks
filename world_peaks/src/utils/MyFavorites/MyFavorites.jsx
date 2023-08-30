@@ -21,7 +21,6 @@ export const MyFavorite = ({
     const appendPeakInModal = () => {
         let favoriteItems = [];
         let favoriteKeys = Object.values(localStorage);
-        // console.log(favoriteKeys)
         for (let peak in all_data) {
             for (let i in favoriteKeys) {
                 if (Number(favoriteKeys[i]) === all_data[peak].id) {
