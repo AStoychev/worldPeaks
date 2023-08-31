@@ -1,5 +1,6 @@
 .popup {
-    background-color: #3ad781;
+    background-color: #99e1b9;
+    /* background-color: #3ad781; */
     width: 450px;
     padding: 10px 20px;
     position: absolute;
@@ -32,6 +33,10 @@
     cursor: pointer;
 }
 
+.closeButton:hover {
+    color: red;
+}
+
 .popup h2 {
     text-align: center;
 }
@@ -46,13 +51,14 @@
 .popup p {
     font-size: 14px;
     text-align: justify;
-    madrgin: 20px 1px;
+    margin: 20px 1px;
 }
 
-.letsGoButton {
+.letsGoClose {
     display: block;
     width: 150px;
     position: relative;
+    top: 0.5rem;
     margin: auto;
     text-align: center;
     background-color: #0f72e5;
@@ -62,10 +68,64 @@
     border: none;
 }
 
-.letsGoButton:hover {
+.letsGoClose:hover {
     background-color: #18579f;
 }
 
-.aboutLink {
+.table {
+    text-align: center;
+    margin-left: 39px;
+}
+
+.infoForPeeks {
+    padding-left: 35px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.infoForPeeksEl {
+    padding: 5px;
+}
+
+.sortingButton {
+    border: none;
     text-decoration: none;
+    background: none;
+    color: rgb(118, 29, 29);
+    font-weight: bold;
+}
+
+.sortingButton:hover {
+    color: rgb(41, 130, 62);
+}
+
+.infoForPeeksElement {
+    padding-left: 35px;
+    color: rgb(2, 2, 2);
+    text-align: center;
+    /* border: solid; */
+}
+
+.buttonGoTo {
+    border: none;
+    text-decoration: none;
+    background: none;
+    color: rgb(81, 13, 241);
+    font-weight: bold;
+}
+
+.buttonGoTo:hover {
+    color: rgb(0, 0, 0)
+}
+
+.buttonDelete {
+    border: none;
+    text-decoration: none;
+    background: none;
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+}
+
+.buttonDelete:hover {
+    color: #821304;
 }

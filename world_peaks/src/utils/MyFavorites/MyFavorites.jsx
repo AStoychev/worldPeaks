@@ -1,8 +1,8 @@
 import { useState } from "react"
 
-import { deleteFavorite } from "../../functions/deleteFavorite"
-
-import { useMap } from "react-leaflet";
+import { sortByHeightFunction } from "../../functions/myFavoriteSorting/sortingByHeightFunction";
+import { sortByNameFunction } from "../../functions/myFavoriteSorting/sortingByNameFunction";
+import { switchSort } from "../../functions/myFavoriteSorting/switchSort";
 
 import all_data from "../../data/all_peaks_over_2000_meters_data.json"
 
@@ -57,9 +57,24 @@ export const MyFavorite = ({
 
     const [item, setItem] = useState(appendPeakInModal)
 
+    // Sorting
+    const [sortHight, setSortHight] = useState("asc");
+    const [sortName, setSortName] = useState("asc");
+
+    const sortByHeight = (peak) => {
+        setSortHight(switchSort(sortHight));
+        setItem(sortByHeightFunction(peak, sortHight))
+    }
+
+    const sortByName = (peak) => {
+        setSortName(switchSort(sortName));
+        setItem(sortByNameFunction(peak, sortName))
+    }
+    // Sorting
+
     return (
         <div>
-            <div className={styles.popup}>
+            <div id="mainPopup" className={styles.popup}>
                 <div className={styles.container}>
                     <button className={styles.closeButton} onClick={handleClose}>&times;</button>
                     <h2>Favorite</h2>
@@ -70,22 +85,37 @@ export const MyFavorite = ({
                     <div>
                         {item.length
                             ?
-                            <table>
+                            <table className={styles.table}>
                                 <tbody>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Continent</th>
-                                        <th>Meters</th>
-                                        <th>Go To</th>
-                                        <th>Delete</th>
+                                    <tr className={styles.infoForPeeks}>
+                                        <th className={styles.infoForPeeksEl}>
+                                            <button className={styles.sortingButton} onClick={() => sortByName(item)}>
+                                                Name
+                                            </button>
+                                        </th>
+                                        <th className={styles.infoForPeeksEl}>Continent</th>
+                                        <th className={styles.infoForPeeksEl}>
+                                            <button className={styles.sortingButton} onClick={() => sortByHeight(item)}>
+                                                Meters
+                                            </button>
+                                        </th>
+                                        <th className={styles.infoForPeeksEl}>Delete</th>
                                     </tr>
                                     {item.map(x => (
-                                        <tr key={x.id}>
-                                            <td>{x.name}</td>
+                                        <tr className={styles.infoForPeeksElement} key={x.id}>
+                                            <td>
+                                                <button
+                                                    className={styles.buttonGoTo} value={x.id} onClick={goToFavorite} title={`Go to ${x.name}`}>{x.name}
+                                                </button>
+                                            </td>
                                             <td>{x.continent}</td>
                                             <td>{x.meters}</td>
-                                            <td><button style={{ color: "green" }} value={x.id} onClick={goToFavorite}>O</button></td>
-                                            <td><button style={{ color: "red" }} value={x.id} onClick={onDelete}>X</button></td>
+                                            <td>
+                                                <button
+                                                    className={styles.buttonDelete} value={x.id} onClick={onDelete} title={`Delete ${x.name}`}>
+                                                    X
+                                                </button>
+                                            </td>
                                         </tr>
                                     ))}
                                 </tbody>
@@ -93,7 +123,7 @@ export const MyFavorite = ({
                             :
                             <div>You don't have favorite peaks yet!</div>}
                     </div>
-                    <button className={styles.letsGoButton} onClick={handleClose}>Close</button>
+                    <button className={styles.letsGoClose} onClick={handleClose}>Close</button>
                 </div>
             </div>
         </div>

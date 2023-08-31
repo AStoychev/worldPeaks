@@ -131,8 +131,18 @@ export const Map = () => {
     };
     // Save favorite place in local storage
 
+    // Close modal after click outside
+    const clickOutside = (e) => {
+        if (modalOpen != false && e.target.closest("#mainPopup") === null) {
+            setModalOpen(false)
+        }
+        // if(e.target.matches(".mapContainer")){
+        //     setModalOpen(false)
+        // }
+    }
+
     return (
-        <div className="sectionStyle">
+        <div className="sectionStyle" onClick={clickOutside}>
             {modalOpen}
 
             <MapContainer center={[51.505, -0.09]} zoom={3} className="mapContainer" scrollWheelZoom={true}>

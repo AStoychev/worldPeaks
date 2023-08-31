@@ -32,12 +32,16 @@
 }
 
 .myFavorites {
-    position: absolute;
+    position: relative;
+    width: 44px;
+    top: 4rem;
+    left: 0.3rem;
+    z-index: 1000;
+    /* position: absolute;
     padding-top: 5px;
     top: 15%;
     left: 0.3%;
-    /* left: -0.5%; */
-    z-index: 1000;
+    z-index: 1000; */
 }
 
 .deleteDiv {
