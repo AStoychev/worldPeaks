@@ -58,17 +58,30 @@
 }
 
 .closeAndShowAllButtons {
+    width: 100%;
+    display:block;
+    position:relative;
+    margin-top: 5px;
     text-align: center;
-    justify-content: center;
+    height: auto;
+
+    /* text-align: center;
+    justify-content: center; */
 }
 
 .letsGoToAll {
+    max-width: 180%;
+    max-height: 100%;
+    /* width:220px;
+    height: 70px; */
+    /* font-size: 200%; */
+    text-align: center;
+
     display: block;
     width: 130px;
     border-radius: 10px;
     position: relative;
     top: 0.5rem;
-    /* margin: auto; */
     margin-left: 139px;
     margin-bottom: 10px;
     text-align: center;
@@ -84,12 +97,18 @@
 }
 
 .letsGoClose {
+    max-width: 180%;
+    max-height: 100%;
+    /* width:220px; */
+    /* height: 70px;
+    font-size: 200%; */
+    text-align: center;
+
     display: block;
     width: 130px;
     border-radius: 10px;
     position: relative;
     top: 0.5rem;
-    /* margin: auto; */
     margin-left: 139px;
     margin-bottom: 10px;
     text-align: center;
@@ -104,12 +123,21 @@
     background-color: #731a1a;
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 520px) {
     .letsGoToAll {
         margin-left: 100px;
     }
     .letsGoClose {
         margin-left: 100px;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .letsGoToAll {
+        margin-left: 110px;
+    }
+    .letsGoClose {
+        margin-left: 110px;
     }
 }
 

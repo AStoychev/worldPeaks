@@ -173,7 +173,7 @@ export const Map = () => {
                 </div>
 
                 <div className='myFavorites'>
-                    <button className="navigationLinkFavorite" onClick={handleCloseFavorite}><AiFillHeart /></button>
+                    <button className="navigationLinkFavorite" onClick={handleCloseFavorite}><AiFillHeart title='My Favorite'/></button>
                 </div>
 
                 {peaks.map(peak => (
