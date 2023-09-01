@@ -16,7 +16,14 @@
     .popup {
         width: 90%;
         height: 280px;
-        margin-top: 10px;
+        /* margin-top: 30px; */
+        overflow: auto;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .popup {
+        margin-top: 50px;
         overflow: auto;
     }
 }
@@ -73,9 +80,6 @@
 .letsGoToAll {
     max-width: 180%;
     max-height: 100%;
-    /* width:220px;
-    height: 70px; */
-    /* font-size: 200%; */
     text-align: center;
 
     display: block;
@@ -100,9 +104,6 @@
 .letsGoClose {
     max-width: 180%;
     max-height: 100%;
-    /* width:220px; */
-    /* height: 70px;
-    font-size: 200%; */
     text-align: center;
 
     display: block;
@@ -124,21 +125,21 @@
     background-color: #731a1a;
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 350px) {
     .letsGoToAll {
-        margin-left: 110px;
+        margin-left: 35%;
     }
     .letsGoClose {
-        margin-left: 110px;
+        margin-left: 35%;
     }
 }
 
 @media only screen and (max-width: 530px) {
     .letsGoToAll {
-        margin-left: 140px;
+        margin-left: 35%;
     }
     .letsGoClose {
-        margin-left: 140px;
+        margin-left: 35%;
     }
 }
 
