@@ -12,17 +12,18 @@
     /* font-family: "Poppins", sans-serif; */
 }
 
-@media only screen and (max-width: 500px) {
+/* @media only screen and (max-width: 500px) {
     .popup {
-        width: 90%;
-        height: 280px;
+        width: 300px;
         overflow: auto;
     }
-}
+} */
 
 @media only screen and (max-width: 800px) {
     .popup {
-        width: 90%;
+        width: 300px;
+        height: 400px;
+        /* width: 90%; */
         margin-top: 10px;
         overflow: auto;
     }
@@ -122,21 +123,21 @@
     background-color: #731a1a;
 }
 
-@media only screen and (max-width: 350px) {
+/* @media only screen and (max-width: 350px) {
     .letsGoToAll {
         margin-left: 30%;
     }
     .letsGoClose {
         margin-left: 30%;
     }
-}
+} */
 
-@media only screen and (max-width: 530px) {
+@media only screen and (max-width: 800px) {
     .letsGoToAll {
-        margin-left: 150px;
+        margin-left: 70px;
     }
     .letsGoClose {
-        margin-left: 150px;
+        margin-left: 70px;
     }
 }
 
