@@ -2,7 +2,7 @@
     background-color: #99e1b9;
     /* background-color: #3ad781; */
     width: 450px;
-    padding: 10px 20px;
+    padding: 1px 10px;
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
@@ -12,10 +12,10 @@
     /* font-family: "Poppins", sans-serif; */
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 500px) {
     .popup {
-        width: 80%;
-        height: 300px;
+        /* width: 90%; */
+        height: 280px;
         overflow: auto;
     }
 }
@@ -82,7 +82,7 @@
     border-radius: 10px;
     position: relative;
     top: 0.5rem;
-    margin-left: 139px;
+    margin-left: 149px;
     margin-bottom: 10px;
     text-align: center;
     background-color: #0f72e5;
@@ -109,7 +109,7 @@
     border-radius: 10px;
     position: relative;
     top: 0.5rem;
-    margin-left: 139px;
+    margin-left: 149px;
     margin-bottom: 10px;
     text-align: center;
     background-color: #a42725;
@@ -123,21 +123,21 @@
     background-color: #731a1a;
 }
 
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 320px) {
     .letsGoToAll {
-        margin-left: 100px;
+        margin-left: 110px;
     }
     .letsGoClose {
-        margin-left: 100px;
+        margin-left: 110px;
     }
 }
 
 @media only screen and (max-width: 530px) {
     .letsGoToAll {
-        margin-left: 110px;
+        margin-left: 140px;
     }
     .letsGoClose {
-        margin-left: 110px;
+        margin-left: 140px;
     }
 }
 
