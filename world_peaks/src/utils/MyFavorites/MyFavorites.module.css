@@ -9,12 +9,14 @@
     top: 50%;
     border-radius: 8px;
     z-index: 1000;
-    font-family: "Poppins", sans-serif;
+    /* font-family: "Poppins", sans-serif; */
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 650px) {
     .popup {
-        width: 100%;
+        width: 80%;
+        height: 300px;
+        overflow: auto;
     }
 }
 
@@ -39,12 +41,13 @@
 
 .popup h2 {
     text-align: center;
+    font: italic small-caps bold 26px cursive;
 }
 
 .paragraphCookie {
     color: rgb(0, 0, 0);
     font-size: 15px;
-    font-weight: bold;
+    font-style: italic;
     text-align: center;
 }
 
@@ -54,12 +57,20 @@
     margin: 20px 1px;
 }
 
-.letsGoClose {
+.closeAndShowAllButtons {
+    text-align: center;
+    justify-content: center;
+}
+
+.letsGoToAll {
     display: block;
-    width: 150px;
+    width: 130px;
+    border-radius: 10px;
     position: relative;
     top: 0.5rem;
-    margin: auto;
+    /* margin: auto; */
+    margin-left: 139px;
+    margin-bottom: 10px;
     text-align: center;
     background-color: #0f72e5;
     color: #ffffff;
@@ -68,13 +79,51 @@
     border: none;
 }
 
-.letsGoClose:hover {
+.letsGoToAll:hover {
     background-color: #18579f;
 }
 
-.table {
+.letsGoClose {
+    display: block;
+    width: 130px;
+    border-radius: 10px;
+    position: relative;
+    top: 0.5rem;
+    /* margin: auto; */
+    margin-left: 139px;
+    margin-bottom: 10px;
     text-align: center;
-    margin-left: 39px;
+    background-color: #a42725;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 0;
+    border: none;
+}
+
+.letsGoClose:hover {
+    background-color: #731a1a;
+}
+
+@media only screen and (max-width: 650px) {
+    .letsGoToAll {
+        margin-left: 100px;
+    }
+    .letsGoClose {
+        margin-left: 100px;
+    }
+}
+
+.table {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    /* margin-left: 10px; */
+}
+
+.noFavorite {
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .infoForPeeks {
@@ -122,10 +171,20 @@
     border: none;
     text-decoration: none;
     background: none;
-    color: rgb(255, 0, 0);
+    color: rgb(198, 52, 52);
     font-weight: bold;
 }
 
 .buttonDelete:hover {
-    color: #821304;
+    color: rgb(126, 4, 4);
 }
+
+.buttonDeleteIcon {
+    font-size: 21px;
+    padding-bottom: 4px;
+}
+
+
+/* .buttonDeleteIcon {
+    background-image:url("../../../public/images/bin.png") ;
+} */

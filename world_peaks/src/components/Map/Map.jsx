@@ -85,7 +85,8 @@ export const Map = () => {
             map.flyTo(getCoordinates(peaks), map.zoom = 18);
         }
         else if (peaks.length > 1) {
-            map.flyTo(getCoordinates(peaks), map.zoom = 5);
+            map.flyTo(getCoordinates(peaks), map.zoom = 4);
+            // map.flyTo(getCoordinates(peaks), map.zoom = 5);
         } else {
             map.flyTo([51.505, -0.09], map.zoom = 3);
         }
@@ -111,8 +112,12 @@ export const Map = () => {
         }
     }
 
-    const deleteFavorite = (e) => {
-        localStorage.removeItem(`id${e.target.value}`)
+    const deleteFavorite = (deleteItem) => {
+        // This check is because whet we try to delete from direct modal we use alt and when delete from map we use value
+        if(deleteItem.target) {
+            deleteItem = deleteItem.target.value
+        }
+        localStorage.removeItem(`id${deleteItem}`)
         setExist(Object.values(localStorage))
     }
 

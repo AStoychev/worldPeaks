@@ -6,6 +6,7 @@ import { switchSort } from "../../functions/myFavoriteSorting/switchSort";
 
 import all_data from "../../data/all_peaks_over_2000_meters_data.json"
 
+import { MdDeleteForever } from 'react-icons/md'
 import styles from "./MyFavorites.module.css"
 
 export const MyFavorite = ({
@@ -44,18 +45,24 @@ export const MyFavorite = ({
 
     const goToFavorite = (e) => {
         // let goToFavoritePeak = appendPeakInModal();
-        let goToFavoritePeak = goToChooseFavoritePeak(e.target.value)
-        goTo(goToFavoritePeak)
-        onClose()
+        let goToFavoritePeak = goToChooseFavoritePeak(e.target.value);
+        goTo(goToFavoritePeak);
+        onClose();
     }
 
     const onDelete = (e) => {
-        deleteFavorite(e)
+        let deleteItem = e.target.alt
+        deleteFavorite(deleteItem);
         // deleteFavorite(e.target.value)
-        setItem(appendPeakInModal)
+        setItem(appendPeakInModal);
     }
 
     const [item, setItem] = useState(appendPeakInModal)
+
+    const showAllOnMap = () => {
+        goTo(item);
+        onClose();
+    }
 
     // Sorting
     const [sortHight, setSortHight] = useState("asc");
@@ -72,12 +79,24 @@ export const MyFavorite = ({
     }
     // Sorting
 
+    // Hover Delete Icon
+    // const [hover, setHover] = useState("../images/bin.png")
+    // const onHover = (e) => {
+    //     let id = e.target.alt
+    //     setHover("../images/binOnHover.png")
+    // }
+    // const outHover = (e) => {
+    //     let id = e.target.alt
+    //         setHover("../images/bin.png")
+    // }
+    // Hover Delete Icon
+
     return (
         <div>
             <div id="mainPopup" className={styles.popup}>
                 <div className={styles.container}>
                     <button className={styles.closeButton} onClick={handleClose}>&times;</button>
-                    <h2>Favorite</h2>
+                    <h2>My Favorite</h2>
                     <div className={styles.paragraphCookie}>
                         Your favorite peaks are saved in your browser. If you open the application
                         from another browser or device, they will not be saved!
@@ -85,45 +104,63 @@ export const MyFavorite = ({
                     <div>
                         {item.length
                             ?
-                            <table className={styles.table}>
-                                <tbody>
-                                    <tr className={styles.infoForPeeks}>
-                                        <th className={styles.infoForPeeksEl}>
-                                            <button className={styles.sortingButton} onClick={() => sortByName(item)}>
-                                                Name
-                                            </button>
-                                        </th>
-                                        <th className={styles.infoForPeeksEl}>Continent</th>
-                                        <th className={styles.infoForPeeksEl}>
-                                            <button className={styles.sortingButton} onClick={() => sortByHeight(item)}>
-                                                Meters
-                                            </button>
-                                        </th>
-                                        <th className={styles.infoForPeeksEl}>Delete</th>
-                                    </tr>
-                                    {item.map(x => (
-                                        <tr className={styles.infoForPeeksElement} key={x.id}>
-                                            <td>
-                                                <button
-                                                    className={styles.buttonGoTo} value={x.id} onClick={goToFavorite} title={`Go to ${x.name}`}>{x.name}
+                            <div className={styles.table}>
+                                <table>
+                                    <tbody>
+                                        <tr className={styles.infoForPeeks}>
+                                            <th className={styles.infoForPeeksEl}>
+                                                <button className={styles.sortingButton} onClick={() => sortByName(item)} title="Sort By Name">
+                                                    Name
                                                 </button>
-                                            </td>
-                                            <td>{x.continent}</td>
-                                            <td>{x.meters}</td>
-                                            <td>
-                                                <button
-                                                    className={styles.buttonDelete} value={x.id} onClick={onDelete} title={`Delete ${x.name}`}>
-                                                    X
+                                            </th>
+                                            <th className={styles.infoForPeeksEl}>
+                                                <button className={styles.sortingButton} onClick={() => sortByHeight(item)} title="Sort By Height">
+                                                    Meters
                                                 </button>
-                                            </td>
+                                            </th>
+                                            <th className={styles.infoForPeeksEl}>Continent</th>
+                                            {/* <th className={styles.infoForPeeksEl}>Delete</th> */}
                                         </tr>
-                                    ))}
-                                </tbody>
-                            </table>
+                                        {item.map(x => (
+                                            <tr className={styles.infoForPeeksElement} key={x.id}>
+                                                <td>
+                                                    <button
+                                                        className={styles.buttonGoTo} value={x.id} onClick={goToFavorite} title={`Go to ${x.name}`}>{x.name}
+                                                    </button>
+                                                </td>
+                                                <td>{x.meters}</td>
+                                                <td>{x.continent}</td>
+                                                <td>
+                                                    <button
+                                                        className={styles.buttonDelete} value={x.id} onClick={onDelete} title={`Delete ${x.name}`}>
+                                                        {/* <div className={styles.buttonDeleteIcon} >< MdDeleteForever value={x.id}/></div> */}
+                                                        <img
+                                                            src='../images/bin.png'
+                                                            alt={x.id}
+                                                            value={x.id}
+                                                            className={styles.buttonDeleteIcon}
+                                                        />
+
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
                             :
-                            <div>You don't have favorite peaks yet!</div>}
+                            <div className={styles.noFavorite}>You don't have favorite peaks yet!</div>}
                     </div>
-                    <button className={styles.letsGoClose} onClick={handleClose}>Close</button>
+                    <div className={styles.buttonParent}>
+                        <div className={styles.closeAndShowAllButtons}>
+                            {item.length ?
+                                <button className={styles.letsGoToAll} onClick={showAllOnMap}>Show All</button>
+                                :
+                                ""
+                            }
+                            <button className={styles.letsGoClose} onClick={handleClose}>Close</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
