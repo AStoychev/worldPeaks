@@ -16,7 +16,6 @@
     .popup {
         width: 90%;
         height: 280px;
-        /* margin-top: 30px; */
         overflow: auto;
     }
 }
