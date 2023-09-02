@@ -2,6 +2,7 @@
     background-color: #99e1b9;
     /* background-color: #3ad781; */
     width: 450px;
+    max-height: 650px;
     padding: 1px 10px;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -9,6 +10,7 @@
     top: 50%;
     border-radius: 8px;
     z-index: 1000;
+    overflow: auto;
     /* font-family: "Poppins", sans-serif; */
 }
 
