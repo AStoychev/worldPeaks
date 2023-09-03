@@ -80,15 +80,13 @@ export const MyFavorite = ({
     // Sorting
 
     // Hover Delete Icon
-    // const [hover, setHover] = useState("../images/bin.png")
-    // const onHover = (e) => {
-    //     let id = e.target.alt
-    //     setHover("../images/binOnHover.png")
-    // }
-    // const outHover = (e) => {
-    //     let id = e.target.alt
-    //         setHover("../images/bin.png")
-    // }
+    const [hover, setHover] = useState(0)
+    const onHover = (e) => {
+        setHover(e.target.value)
+    }
+    const outHover = (e) => {
+        setHover(0)
+    }
     // Hover Delete Icon
 
     return (
@@ -132,14 +130,24 @@ export const MyFavorite = ({
                                                 <td>{x.continent}</td>
                                                 <td>
                                                     <button
-                                                        className={styles.buttonDelete} value={x.id} onClick={onDelete} title={`Delete ${x.name}`}>
+                                                        className={styles.buttonDelete} value={x.id} onClick={onDelete} onMouseEnter={onHover}
+                                                        onMouseLeave={outHover} title={`Delete ${x.name}`}>
                                                         {/* <div className={styles.buttonDeleteIcon} >< MdDeleteForever value={x.id}/></div> */}
-                                                        <img
-                                                            src='../images/bin.png'
-                                                            alt={x.id}
-                                                            value={x.id}
-                                                            className={styles.buttonDeleteIcon}
-                                                        />
+                                                        {Number(hover) === x.id ?
+                                                            <img
+                                                                src='../images/binOnHover.png'
+                                                                alt={x.id}
+                                                                value={x.id}
+                                                                className={styles.buttonDeleteIcon}
+                                                            />
+                                                            :
+                                                            <img
+                                                                src='../images/bin.png'
+                                                                alt={x.id}
+                                                                value={x.id}
+                                                                className={styles.buttonDeleteIcon}
+                                                            />
+                                                        }
 
                                                     </button>
                                                 </td>

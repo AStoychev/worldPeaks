@@ -200,15 +200,17 @@
 
 .buttonDelete {
     border: none;
+    width: 45px;
+    height: 45px;
     text-decoration: none;
     background: none;
     color: rgb(198, 52, 52);
     font-weight: bold;
 }
 
-.buttonDelete:hover {
+/* .buttonDelete:hover {
     color: rgb(126, 4, 4);
-}
+} */
 
 .buttonDeleteIcon {
     font-size: 21px;
