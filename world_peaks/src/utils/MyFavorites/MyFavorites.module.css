@@ -1,6 +1,5 @@
 .popup {
     background-color: #99e1b9;
-    /* background-color: #3ad781; */
     width: 450px;
     max-height: 650px;
     padding: 1px 10px;
@@ -11,22 +10,12 @@
     border-radius: 8px;
     z-index: 1000;
     overflow: auto;
-    /* font-family: "Poppins", sans-serif; */
 }
-
-/* @media only screen and (max-width: 500px) {
-    .popup {
-        width: 300px;
-        overflow: auto;
-    }
-} */
 
 @media only screen and (max-width: 800px) {
     .popup {
         width: 300px;
         height: 80%;
-        /* height: 400px; */
-        /* width: 90%; */
         margin-top: 10px;
         overflow: auto;
     }
@@ -126,15 +115,6 @@
     background-color: #731a1a;
 }
 
-/* @media only screen and (max-width: 350px) {
-    .letsGoToAll {
-        margin-left: 30%;
-    }
-    .letsGoClose {
-        margin-left: 30%;
-    }
-} */
-
 @media only screen and (max-width: 800px) {
     .letsGoToAll {
         margin-left: 70px;
@@ -148,7 +128,6 @@
     display: flex;
     text-align: center;
     justify-content: center;
-    /* margin-left: 10px; */
 }
 
 .noFavorite {
@@ -183,7 +162,6 @@
     padding-left: 35px;
     color: rgb(2, 2, 2);
     text-align: center;
-    /* border: solid; */
 }
 
 .buttonGoTo {
@@ -208,16 +186,7 @@
     font-weight: bold;
 }
 
-/* .buttonDelete:hover {
-    color: rgb(126, 4, 4);
-} */
-
 .buttonDeleteIcon {
     font-size: 21px;
     padding-bottom: 4px;
 }
-
-
-/* .buttonDeleteIcon {
-    background-image:url("../../../public/images/bin.png") ;
-} */
