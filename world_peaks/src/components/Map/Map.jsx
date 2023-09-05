@@ -26,9 +26,6 @@ export const Map = () => {
     const [peaks, setPeaks] = useState([]);
     const [checked, setChecked] = useState([]);
 
-    // Try stop button click when map go to location
-    const [fly, setFly] = useState(false)
-
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);

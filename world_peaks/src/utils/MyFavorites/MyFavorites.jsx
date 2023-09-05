@@ -6,7 +6,6 @@ import { switchSort } from "../../functions/myFavoriteSorting/switchSort";
 
 import all_data from "../../data/all_peaks_over_2000_meters_data.json"
 
-import { MdDeleteForever } from 'react-icons/md'
 import styles from "./MyFavorites.module.css"
 
 export const MyFavorite = ({
@@ -44,7 +43,6 @@ export const MyFavorite = ({
     }
 
     const goToFavorite = (e) => {
-        // let goToFavoritePeak = appendPeakInModal();
         let goToFavoritePeak = goToChooseFavoritePeak(e.target.value);
         goTo(goToFavoritePeak);
         onClose();
@@ -117,7 +115,6 @@ export const MyFavorite = ({
                                                 </button>
                                             </th>
                                             <th className={styles.infoForPeeksEl}>Continent</th>
-                                            {/* <th className={styles.infoForPeeksEl}>Delete</th> */}
                                         </tr>
                                         {item.map(x => (
                                             <tr className={styles.infoForPeeksElement} key={x.id}>
@@ -132,7 +129,6 @@ export const MyFavorite = ({
                                                     <button
                                                         className={styles.buttonDelete} value={x.id} onClick={onDelete} onMouseEnter={onHover}
                                                         onMouseLeave={outHover} title={`Delete ${x.name}`}>
-                                                        {/* <div className={styles.buttonDeleteIcon} >< MdDeleteForever value={x.id}/></div> */}
                                                         {Number(hover) === x.id ?
                                                             <img
                                                                 src='../images/binOnHover.png'
