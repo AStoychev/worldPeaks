@@ -1,12 +1,10 @@
 .buttonHeightFilter {
     width: 160px;
     height: 30px;
-    /* border: solid; */
     border: none;
     font-size: 16px;
     font-weight: bold;
     font-family: system-ui;
-    /* font-family: cursive; */
     padding-left: 10px;
     border-radius: 10px;
     margin-bottom: 5px;
@@ -14,13 +12,10 @@
     cursor: pointer;
     color: white;
     background-color: #4b5361;
-    /* background-color: #56f0cc; */
-    /* background-image: linear-gradient(to right, #74444d, #3877a7) !important; */
 }
 
 .buttonHeightFilter:hover {
     background-color: rgb(44, 100, 178);
-    /* background-image: linear-gradient(to right, #6feacd, #6cff93) !important; */
 }
 
 .clearFilter {

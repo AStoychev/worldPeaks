@@ -6,10 +6,6 @@ export const SelectButton = ({
     closeOtherDropdown,
 }) => {
 
-    // const openCloseFunction = () => {
-    //     handleOpen()
-    //     closeOtherDropdown()
-    // }
     return (
         <div>
             <button className={styles.buttonHeightFilter} onClick={handleOpen} value={buttonName}>{buttonName}</button>
