@@ -138,9 +138,6 @@ export const Map = () => {
         if (modalOpen != false && e.target.closest("#mainPopup") === null) {
             setModalOpen(false)
         }
-        // if(e.target.matches(".mapContainer")){
-        //     setModalOpen(false)
-        // }
     }
 
     return (
