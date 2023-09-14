@@ -11,11 +11,6 @@ import { givePeakBelow3000 } from './filterByClickHightButton/givePeakBelow3000'
 export const onFilterByHight = (peaks, filterByPeakHight) => {
     let filtredItems = []
 
-    // if(peaks.length) {
-    //     console.log(peaks)
-    //     filterByPeakHight = peaks
-    // }
-
     if (filterByPeakHight === "8000m") {
         filtredItems.push(givePeakAbove8000(all_data))
     } else if (filterByPeakHight === "7000") {
@@ -31,13 +26,6 @@ export const onFilterByHight = (peaks, filterByPeakHight) => {
     } else {
         filtredItems.push(givePeakBelow3000(all_data))
     }
-
-    // let maxPeak = []
-    // for(let i in filtredItems[0]) {
-    //     maxPeak.push(filtredItems[0][i]["meters"])
-    // }
-    // maxPeak = Math.max(...maxPeak);
-
 
     return filtredItems[0]
 }
