@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { FilterDropDown } from "./FilterDropDown";
 import { ClearButton } from "../SelectButton/ClearButton";
-import { SelectButton } from "../SelectButton/SelectButton";
 import { HeightDropdown } from "./HeightDropdown";
 import { ContinentDropdown } from "./ContinentDropdown";
 import { ModalFilterByCountry } from "../../modals/ModalFilterByCountry";
